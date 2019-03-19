@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Description:
  * @date 2019/3/19
  */
-@FeignClient(value = "service-producer")
+@FeignClient(value = "service-producer", fallback = FeignServiceHystrix.class)
 public interface FeignExampleService {
 
     @GetMapping("hello")
